@@ -3,5 +3,16 @@
     "comingSoon": "Coming soon",
     "home_welcome_title": "Explore the universe",
     "home_welcome_subtitle": "Explore the mysteries of the universe and discover the most fascinating planets in our solar system. Embark on a cosmic adventure and take a closer look at what lies beyond Earth.",
-    "home_welcome_button": "View planets"
+    "home_welcome_button": "View planets",
+    "planets_loading": "Loading...",
+    "planets_explore": "Explore Planets",
+    "no_planets_found": "No planets found",
+    "try_another_search": "Try another search",
+    "search_hint": "Search planets",
+    "day_duration": "Day duration:",
+    "details": "Details",
+    "distance_from_sun": "Distance from the Sun: ",
+    "atmosphere_composition": "Atmosphere Composition: ",
+    "moons": "Moons: ",
+    "days": "days"
 }

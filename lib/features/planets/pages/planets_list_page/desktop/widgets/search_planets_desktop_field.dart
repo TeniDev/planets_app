@@ -25,7 +25,7 @@ class SearchPlanetsDesktopField extends StatelessWidget {
             ),
             cursorColor: Colors.white,
             decoration: InputDecoration(
-              hintText: 'Search planets',
+              hintText: context.locale.search_hint,
               hintStyle: TextStyle(
                 color: Colors.white.withOpacity(0.5),
               ),

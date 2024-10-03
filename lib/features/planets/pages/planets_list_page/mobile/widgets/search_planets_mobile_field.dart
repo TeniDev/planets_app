@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:planets_app/core/extensions/extensions.dart';
 import 'package:planets_app/features/planets/providers/planets_provider.dart';
 
 class SearchPlanetsMobileField extends StatelessWidget {
@@ -24,7 +25,7 @@ class SearchPlanetsMobileField extends StatelessWidget {
             ),
             cursorColor: Colors.white,
             decoration: InputDecoration(
-              hintText: 'Search planets',
+              hintText: context.locale.search_hint,
               hintStyle: TextStyle(
                 color: Colors.white.withOpacity(0.5),
               ),

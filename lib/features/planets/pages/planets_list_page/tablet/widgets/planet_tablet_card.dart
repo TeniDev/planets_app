@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:planets_app/core/extensions/extensions.dart';
 import 'package:planets_app/core/router/router.dart';
 import 'package:planets_app/data/models/models.dart';
 
@@ -83,7 +84,7 @@ class PlanetTabletCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Duración de un día: ${planet.dayLengthEarthDays ?? ''}',
+                      '${context.locale.day_duration} ${planet.dayLengthEarthDays ?? ''}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,

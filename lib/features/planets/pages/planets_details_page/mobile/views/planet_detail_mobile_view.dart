@@ -43,7 +43,7 @@ class PlanetDetailMobileView extends StatelessWidget {
               final loading = ref.watch(planetsProvider.select((state) => state.loadingDetail));
               final planetSelected = ref.watch(planetsProvider.select((state) => state.selectedPlanet));
 
-              return Text(loading ? 'Loading...' : planetSelected?.name ?? '');
+              return Text(loading ? context.locale.planets_loading : planetSelected?.name ?? '');
             },
           ),
           actions: [
@@ -134,9 +134,9 @@ class PlanetDetailMobileView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text(
-                          'No planet found',
-                          style: TextStyle(
+                        Text(
+                          context.locale.no_planets_found,
+                          style: const TextStyle(
                             fontSize: 18,
                             color: Colors.white,
                           ),

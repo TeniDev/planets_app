@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:planets_app/core/extensions/extensions.dart';
 import 'package:planets_app/data/models/planet_model.dart';
 
 class DetailPlanetTablet extends StatelessWidget {
@@ -81,9 +82,9 @@ class DetailPlanetTablet extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  'Details',
-                                  style: TextStyle(
+                                Text(
+                                  context.locale.details,
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 36,
                                     fontWeight: FontWeight.bold,
@@ -93,9 +94,9 @@ class DetailPlanetTablet extends StatelessWidget {
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    const Text(
-                                      'Distance from the Sun: ',
-                                      style: TextStyle(
+                                    Text(
+                                      context.locale.distance_from_sun,
+                                      style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 24,
                                         height: 1,
@@ -116,9 +117,9 @@ class DetailPlanetTablet extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      'Atmosphere Composition: ',
-                                      style: TextStyle(
+                                    Text(
+                                      context.locale.atmosphere_composition,
+                                      style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 24,
                                         height: 1,
@@ -140,9 +141,13 @@ class DetailPlanetTablet extends StatelessWidget {
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    const Text(
-                                      'Moons: ',
-                                      style: TextStyle(color: Colors.white, fontSize: 24, height: 1),
+                                    Text(
+                                      context.locale.moons,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        height: 1,
+                                      ),
                                     ),
                                     Text(
                                       '${planetSelected.moons ?? 0}',
@@ -159,16 +164,16 @@ class DetailPlanetTablet extends StatelessWidget {
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    const Text(
-                                      'Duración de un día: ',
-                                      style: TextStyle(
+                                    Text(
+                                      context.locale.day_duration,
+                                      style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 24,
                                         height: 1,
                                       ),
                                     ),
                                     Text(
-                                      '${planetSelected.dayLengthEarthDays} days',
+                                      '${planetSelected.dayLengthEarthDays} ${context.locale.days}',
                                       style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,

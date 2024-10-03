@@ -44,7 +44,7 @@ class PlanetDetailTabletView extends StatelessWidget {
               final planetSelected = ref.watch(planetsProvider.select((state) => state.selectedPlanet));
 
               return Text(
-                loading ? 'Loading...' : planetSelected?.name ?? '',
+                loading ? context.locale.planets_loading : planetSelected?.name ?? '',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -141,9 +141,9 @@ class PlanetDetailTabletView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text(
-                          'No planet found',
-                          style: TextStyle(
+                        Text(
+                          context.locale.no_planets_found,
+                          style: const TextStyle(
                             fontSize: 21,
                             color: Colors.white,
                           ),

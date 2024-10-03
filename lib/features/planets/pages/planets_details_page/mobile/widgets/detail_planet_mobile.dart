@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:planets_app/core/extensions/extensions.dart';
 import 'package:planets_app/data/models/planet_model.dart';
 
 class DetailPlanetMobile extends StatelessWidget {
@@ -78,11 +79,11 @@ class DetailPlanetMobile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Align(
+                  Align(
                     alignment: Alignment.center,
                     child: Text(
-                      'Details',
-                      style: TextStyle(
+                      context.locale.details,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -92,9 +93,9 @@ class DetailPlanetMobile extends StatelessWidget {
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      const Text(
-                        'Distance from the Sun: ',
-                        style: TextStyle(
+                      Text(
+                        context.locale.distance_from_sun,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
@@ -113,9 +114,9 @@ class DetailPlanetMobile extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Atmosphere Composition: ',
-                        style: TextStyle(
+                      Text(
+                        context.locale.atmosphere_composition,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
@@ -133,9 +134,9 @@ class DetailPlanetMobile extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Text(
-                        'Moons: ',
-                        style: TextStyle(
+                      Text(
+                        context.locale.moons,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
@@ -153,15 +154,15 @@ class DetailPlanetMobile extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Text(
-                        'Duración de un día: ',
-                        style: TextStyle(
+                      Text(
+                        context.locale.day_duration,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
                       ),
                       Text(
-                        '${planetSelected.dayLengthEarthDays} days',
+                        '${planetSelected.dayLengthEarthDays} ${context.locale.days}',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,

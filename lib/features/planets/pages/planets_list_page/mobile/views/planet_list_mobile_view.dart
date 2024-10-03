@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:planets_app/core/extensions/extensions.dart';
 import 'package:planets_app/gen/assets.gen.dart';
 
 import '../../../../providers/planets_provider.dart';
@@ -20,7 +21,7 @@ class PlanetListMobileView extends StatelessWidget {
         title: Consumer(
           builder: (_, ref, __) {
             final loading = ref.watch(planetsProvider.select((state) => state.isLoading));
-            return Text(loading ? 'Loading...' : 'Explore Planets');
+            return Text(loading ? context.locale.planets_loading : context.locale.planets_explore);
           },
         ),
       ),
@@ -71,10 +72,10 @@ class PlanetListMobileView extends StatelessWidget {
                   );
                 }
 
-                return const Center(
+                return Center(
                   child: Text(
-                    'No planets found',
-                    style: TextStyle(
+                    context.locale.no_planets_found,
+                    style: const TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                     ),
@@ -89,11 +90,11 @@ class PlanetListMobileView extends StatelessWidget {
                   const SizedBox(height: 24),
                   Expanded(
                     child: filteredPlanets != null && filteredPlanets.isEmpty
-                        ? const Center(
+                        ? Center(
                             child: Text(
-                              'No planets found' '\nTry another search',
+                              '${context.locale.no_planets_found}' '\n${context.locale.try_another_search}',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
                               ),
